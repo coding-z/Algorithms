@@ -1,4 +1,7 @@
 # Naive bubble sort
+#           Worst   Best
+# Time      O(n^2)  O(n^2)
+# Aux Space O(1)    O(1)
 
 def naive_bubble_sort(vals: list[int]) -> list[int]:
     for _ in range(len(vals) - 1):
@@ -9,6 +12,9 @@ def naive_bubble_sort(vals: list[int]) -> list[int]:
     return vals
 
 # Bubble sort with marker for sorted sublist
+#           Worst   Best
+# Time      O(n^2)  O(n^2)
+# Aux Space O(1)    O(1)
 
 def marked_bubble_sort(vals: list[int]) -> list[int]:
     for mark in range(len(vals) - 1, 0, -1):
@@ -17,4 +23,20 @@ def marked_bubble_sort(vals: list[int]) -> list[int]:
                 vals[i], vals[i + 1] = vals[i + 1], vals[i]
         mark -= 1
     
+    return vals
+
+# Bubble sort with detection for when there are no more swaps
+#           Worst   Best
+# Time      O(n^2)  O(n)
+# Aux Space O(1)    O(1)
+
+def bubble_sort_2(vals: list[int]) -> list[int]:
+    for mark in range(len(vals) - 1, 0, -1):
+        swapped = False
+        for i in range(mark):
+            if vals[i] > vals[i + 1]:
+                vals[i], vals[i + 1] = vals[i + 1], vals[i]
+                swapped = True
+        if not swapped:
+            break
     return vals
