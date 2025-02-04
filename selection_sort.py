@@ -1,4 +1,10 @@
 # Selection sort
+#           Worst   Best
+# Time      O(n^2)  O(n^2)
+# Aux Space O(1)    O(1)
+# Not incremental as appending or prepending breaks invariant
+# Invariant: sorted sublist at front which is all smaller than unsorted sublist
+# Unstable as swapping non-adjacent elements
 
 def selection_sort(vals: list[int]) -> list[int]:
     for i in range(len(vals) - 1):
