@@ -2,6 +2,8 @@
 #           Worst   Best
 # Time      O(n^2)  O(n^2)
 # Aux Space O(1)    O(1)
+# Incremental if prepend
+# Stable
 
 def naive_bubble_sort(vals: list[int]) -> list[int]:
     for _ in range(len(vals) - 1):
@@ -15,6 +17,9 @@ def naive_bubble_sort(vals: list[int]) -> list[int]:
 #           Worst   Best
 # Time      O(n^2)  O(n^2)
 # Aux Space O(1)    O(1)
+# Incremental if prepend
+# Stable
+
 
 def marked_bubble_sort(vals: list[int]) -> list[int]:
     for mark in range(len(vals) - 1, 0, -1):
@@ -29,6 +34,9 @@ def marked_bubble_sort(vals: list[int]) -> list[int]:
 #           Worst   Best
 # Time      O(n^2)  O(n)
 # Aux Space O(1)    O(1)
+# Incremental if prepend
+# Stable
+
 
 def bubble_sort_2(vals: list[int]) -> list[int]:
     for mark in range(len(vals) - 1, 0, -1):
