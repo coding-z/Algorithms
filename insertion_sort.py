@@ -1,17 +1,21 @@
-# Insertion sort
-#           Worst   Best
-# Time      O(n^2)  O(n)
-# Aux Space O(1)    O(1)
-# Incremental if appending to end
-# Invariant: sorted sublist at start, though not necessarily in final positions
-# Is stable since only shuffling strictly larger items to the right
+# Insertion Sort Algorithm
 
-def insertion_sort(vals: list[int]) -> list[int]:
-    for i in range(1, len(vals)):
-        saved = vals[i]
+def insertion_sort(list):
+    """Insertion sort of list in ascending order.
+    
+    Complexity  Best    Worst
+    Time        O(n)    O(n^2)
+    Aux Space   O(1)    O(1)
+    
+    Invariant: Sorted sublist at list start.
+    
+    Incremental if appending at end.
+    Stable when only shifting strictly larger items.
+    """
+    for i in range(1, len(list)):
+        saved = list[i]
         j = i - 1
-        while j >= 0 and vals[j] > saved:
-            vals[j + 1] = vals[j]
+        while j >= 0 and list[j] > saved:
+            list[j + 1] = list[j]
             j -= 1
-        vals[j + 1] = saved
-    return vals
+        list[j + 1] = saved
