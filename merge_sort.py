@@ -1,4 +1,9 @@
-"""Merge sort algorithm and associated functions."""
+"""Merge sort algorithm and associated functions.
+
+Complexity      Best            Worst
+Time            O(n * log(n))   O(n * log(n))
+Aux Space       O(n)            O(n)
+"""
 
 def merge(seq_a, seq_b):
     """Merges together two sequences in stable order."""
