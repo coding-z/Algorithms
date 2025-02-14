@@ -8,4 +8,13 @@ class MaxHeap:
     
     def add(self, value):
         """Adds an item to the heap."""
-        pass
+        self.array.append(value)
+        index = len(self.array - 1)
+        parent = (index - 1) // 2
+
+        while parent >= 0 and value > self.array[parent]:
+            buffer = self.array[parent]
+            self.array[parent] = self.array[index]
+            self.array[index] = buffer
+            index = parent
+            parent = (index - 1) // 2
